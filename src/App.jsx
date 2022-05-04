@@ -45,12 +45,19 @@ function App() {
   const [currencies, setCurrencies] = useState({});
 
   useEffect(() => {
-    const [currency, cripto] = currencies;
-    const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${cripto}&tsyms=${currency}`;
+    const apiFetch = async () => {
+      if (Object.keys(currencies).length > 0) {
+        const { currency, cripto } = currencies;
+        const url = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${cripto}&tsyms=${currency}`;
 
-    if (Object.keys(currencies).length > 0) {
-      console.log(currencies);
-    }
+        const response = await fetch(url);
+        const result = await response.json();
+
+        console.log(result);
+      }
+    };
+
+    apiFetch();
   }, [currencies]);
 
   return (
