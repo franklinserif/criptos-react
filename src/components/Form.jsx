@@ -34,16 +34,18 @@ const Form = () => {
       const url =
         'https://min-api.cryptocompare.com/data/top/mktcapfull?limit=10&tsym=USD';
 
-      const response = await fetch(url);
-      const result = await response.json();
-      const arrayCriptos = result.data.map((cripto) => {
-        return {
-          id: cripto.CoinInfo.Name,
-          name: cripto.CoinInfo.FullName,
-        };
-      });
-
-      setCriptos(arrayCriptos);
+      try {
+        const response = await fetch(url);
+        const result = await response.json();
+        console.log(result);
+        const arrayCriptos = result.data.map((cripto) => {
+          return {
+            id: cripto.CoinInfo.Name,
+            name: cripto.CoinInfo.FullName,
+          };
+        });
+        setCriptos(arrayCriptos);
+      } catch (error) {}
     };
 
     ApiFetch();
