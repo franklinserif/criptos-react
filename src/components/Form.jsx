@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 import useSelectCurrency from '../hooks/useSelectCurrency';
 import currencies from '../data/data';
@@ -23,6 +23,7 @@ const InputSubmit = styled.input`
 `;
 
 const Form = () => {
+  const [criptos, setCriptos] = useState([]);
   const [currency, SelectCurrency] = useSelectCurrency(
     'Elige tu moneda',
     currencies,
@@ -41,6 +42,8 @@ const Form = () => {
           name: cripto.CoinInfo.FullName,
         };
       });
+
+      setCriptos(arrayCriptos);
     };
 
     ApiFetch();
