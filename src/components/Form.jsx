@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import useSelectCurrency from '../hooks/useSelectCurrency';
+import currency from '../data/data';
 
 const InputSubmit = styled.input`
   background-color: #9497ff;
@@ -13,6 +14,7 @@ const InputSubmit = styled.input`
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-top: 30px;
 
   &:hover {
     background-color: #7a7dfe;
@@ -20,24 +22,6 @@ const InputSubmit = styled.input`
 `;
 
 const Form = () => {
-  const currency = [
-    {
-      id: 'USD',
-      name: 'DOLLAR OF UNITED OF STATES',
-    },
-    {
-      id: 'MXN',
-      name: 'MEXICAN PESO',
-    },
-    {
-      id: 'EUR',
-      name: 'EURO',
-    },
-    {
-      id: 'GBP',
-      name: 'Pound sterling',
-    },
-  ];
   const [SelectCurrency] = useSelectCurrency('Elige tu moneda', currency);
 
   return (
