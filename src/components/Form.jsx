@@ -35,7 +35,12 @@ const Form = () => {
 
       const response = await fetch(url);
       const result = await response.json();
-      console.log(result);
+      const arrayCriptos = result.data.map((cripto) => {
+        return {
+          id: cripto.CoinInfo.Name,
+          name: cripto.CoinInfo.FullName,
+        };
+      });
     };
 
     ApiFetch();
