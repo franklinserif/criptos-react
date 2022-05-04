@@ -40,7 +40,8 @@ const Form = () => {
       try {
         const response = await fetch(url);
         const result = await response.json();
-        const arrayCriptos = result.data.map((cripto) => {
+        const arrayCriptos = result.Data.map((cripto) => {
+          console.log('cripto:', cripto);
           return {
             id: cripto.CoinInfo.Name,
             name: cripto.CoinInfo.FullName,
