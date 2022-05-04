@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import styled from '@emotion/styled';
 
 const Label = styled.label`
@@ -17,10 +18,15 @@ const Select = styled.select`
 `;
 
 const useSelectCurrency = (label, options) => {
+  const [state, setState] = useState('');
   const SelectCurrency = () => (
     <>
       <Label htmlFor="">{label}</Label>
-      <Select name="currency">
+      <Select
+        name="currency"
+        value={state}
+        onChange={(event) => setState(event.target.value)}
+      >
         {options.map((option) => (
           <option key={option.id} value={option.id}>
             {option.name}
