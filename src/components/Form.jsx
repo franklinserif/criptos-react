@@ -1,3 +1,7 @@
-const Form = () => <div>Form</div>;
+const Form = () => (
+  <form>
+    <input type="submit" value="Cotizar" />
+  </form>
+);
 
 export default Form;
