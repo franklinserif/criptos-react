@@ -28,7 +28,10 @@ const Form = () => {
     'Elige tu moneda',
     currencies,
   );
-
+  const [criptoCurrency, SelectCriptoCurrency] = useSelectCurrency(
+    'Elige tu cripto moneda',
+    criptos,
+  );
   useEffect(() => {
     const ApiFetch = async () => {
       const url =
@@ -37,7 +40,6 @@ const Form = () => {
       try {
         const response = await fetch(url);
         const result = await response.json();
-        console.log(result);
         const arrayCriptos = result.data.map((cripto) => {
           return {
             id: cripto.CoinInfo.Name,
@@ -54,7 +56,7 @@ const Form = () => {
   return (
     <form>
       <SelectCurrency />
-      {currency}
+      <SelectCriptoCurrency />
       <InputSubmit type="submit" value="Cotizar" />
     </form>
   );

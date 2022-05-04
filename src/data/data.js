@@ -1,11 +1,11 @@
 const currencies = [
   {
     id: 'USD',
-    name: 'DOLLAR OF UNITED OF STATES',
+    name: 'Dolar de estados unidos',
   },
   {
     id: 'MXN',
-    name: 'MEXICAN PESO',
+    name: 'Peso mexicano',
   },
   {
     id: 'EUR',
@@ -13,7 +13,7 @@ const currencies = [
   },
   {
     id: 'GBP',
-    name: 'Pound sterling',
+    name: 'Libra esterlina',
   },
 ];
 
