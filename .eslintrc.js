@@ -20,4 +20,10 @@ module.exports = {
   rules: {
     'no-unused-vars': 'error',
   },
+  'react/function-component-definition': [
+    2,
+    {
+      namedComponents: 'function-declaration',
+    },
+  ],
 };
