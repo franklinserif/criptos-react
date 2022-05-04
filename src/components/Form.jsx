@@ -61,6 +61,7 @@ const Form = ({ setCurrencies }) => {
       setError(true);
       return null;
     }
+    setError(false);
     setCurrencies({ currency, cripto });
   };
 

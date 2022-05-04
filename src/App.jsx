@@ -69,7 +69,7 @@ function App() {
       <div>
         <Heading>Cotiza criptomonedas al instante</Heading>
         <Form setCurrencies={setCurrencies} />
-        {result?.PRICE && <Result result={result} />}
+        {result.PRICE && <Result result={result} />}
       </div>
     </Container>
   );
