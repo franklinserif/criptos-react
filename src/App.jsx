@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 import ImageCripto from './assets/img/imagen-criptos.png';
 import Form from './components/Form';
+import Result from './components/Result';
 
 const Container = styled.div`
   max-width: 900px;
@@ -43,6 +44,7 @@ const Heading = styled.h1`
 
 function App() {
   const [currencies, setCurrencies] = useState({});
+  const [result, setResult] = useState({});
 
   useEffect(() => {
     const apiFetch = async () => {
@@ -53,7 +55,7 @@ function App() {
         const response = await fetch(url);
         const result = await response.json();
 
-        console.log(result);
+        setResult(result.DISPLAY[cripto][currency]);
       }
     };
 
@@ -67,6 +69,7 @@ function App() {
       <div>
         <Heading>Cotiza criptomonedas al instante</Heading>
         <Form setCurrencies={setCurrencies} />
+        {result?.PRICE && <Result result={result} />}
       </div>
     </Container>
   );
