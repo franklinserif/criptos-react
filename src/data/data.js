@@ -1,4 +1,4 @@
-const currency = [
+const currencies = [
   {
     id: 'USD',
     name: 'DOLLAR OF UNITED OF STATES',
@@ -17,4 +17,4 @@ const currency = [
   },
 ];
 
-export default currency;
+export default currencies;

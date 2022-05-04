@@ -36,7 +36,7 @@ const useSelectCurrency = (label, options) => {
     </>
   );
 
-  return [SelectCurrency];
+  return [state, SelectCurrency];
 };
 
 export default useSelectCurrency;
