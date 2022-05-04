@@ -20,7 +20,25 @@ const InputSubmit = styled.input`
 `;
 
 const Form = () => {
-  const [SelectCurrency] = useSelectCurrency('Elige tu moneda');
+  const currency = [
+    {
+      id: 'USD',
+      name: 'DOLLAR OF UNITED OF STATES',
+    },
+    {
+      id: 'MXN',
+      name: 'MEXICAN PESO',
+    },
+    {
+      id: 'EUR',
+      name: 'EURO',
+    },
+    {
+      id: 'GBP',
+      name: 'Pound sterling',
+    },
+  ];
+  const [SelectCurrency] = useSelectCurrency('Elige tu moneda', currency);
 
   return (
     <form>
