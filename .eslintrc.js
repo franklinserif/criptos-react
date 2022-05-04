@@ -4,19 +4,20 @@ module.exports = {
     es2021: true,
   },
   extends: [
-    "plugin:react/recommended",
-    "airbnb",
-    "plugin:react/jsx-runtime",
-    "prettier",
-    "plugin:prettier/recommended",
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'airbnb',
+    'plugin:react/jsx-runtime',
   ],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
     },
-    ecmaVersion: "latest",
-    sourceType: "module",
+    ecmaVersion: 'latest',
+    sourceType: 'module',
   },
-  plugins: ["react", "prettier"],
-  rules: {},
+  plugins: ['react'],
+  rules: {
+    'no-unused-vars': 'error',
+  },
 };
