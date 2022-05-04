@@ -28,7 +28,7 @@ const Form = () => {
     'Elige tu moneda',
     currencies,
   );
-  const [criptoCurrency, SelectCriptoCurrency] = useSelectCurrency(
+  const [cripto, SelectCriptoCurrency] = useSelectCurrency(
     'Elige tu cripto moneda',
     criptos,
   );
@@ -41,7 +41,6 @@ const Form = () => {
         const response = await fetch(url);
         const result = await response.json();
         const arrayCriptos = result.Data.map((cripto) => {
-          console.log('cripto:', cripto);
           return {
             id: cripto.CoinInfo.Name,
             name: cripto.CoinInfo.FullName,
@@ -54,11 +53,19 @@ const Form = () => {
     ApiFetch();
   }, []);
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if ([currency, criptos].includes('')) {
+      console.log('ERROR');
+      return null;
+    }
+  };
+
   return (
     <form>
       <SelectCurrency />
       <SelectCriptoCurrency />
-      <InputSubmit type="submit" value="Cotizar" />
+      <InputSubmit type="submit" value="Cotizar" onClick={handleSubmit} />
     </form>
   );
 };
